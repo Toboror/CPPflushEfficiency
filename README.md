@@ -26,3 +26,5 @@ Without flushing, it is 12.87% faster
 ### Conclusion:
 
 In conclusion, the hypothesis was correct. Flushing the buffer after every written line is slower than not flushing after writing all lines.
+
+btw the time complexity is O(N^2), so don't do as I did and change the number of times it runs to 1,000,000.
