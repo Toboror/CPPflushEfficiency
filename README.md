@@ -1,4 +1,6 @@
-# GOAL OF THIS PROJECT
+# Testing flushing the buffer in C++ compared to not flushing.
+
+### Goal of this project:
 The goal of this project was to test if always flushing the buffer after every written line is slower.
 
 ### Hypothesis: 
