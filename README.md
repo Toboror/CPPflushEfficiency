@@ -1,4 +1,5 @@
 # Testing flushing the buffer in C++ compared to not flushing.
+# This was done using a MacBook Air M1 (2020)
 
 ### Goal of this project:
 The goal of this project was to test if always flushing the buffer after every written line is slower.
