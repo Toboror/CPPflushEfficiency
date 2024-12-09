@@ -75,11 +75,8 @@ int main(){
     const int timesToRun = 10000;     // Decides how many times to simulate the written lines.
     const int xLinesInForLoop = 10000;    // Decides how many lines to write per simulation.
 
-    const int* ptrTimesToRun = &timesToRun;   // Pointer which points to the mem address for the var deciding x times to run.
-    const int* ptrXlines = &xLinesInForLoop;  // Pointer which points to the mem address for the var deciding x lines to simulate.
-
     //withoutFlush(timesToRun, xLinesInForLoop);    // Runs the simulation WITHOUT FLUSHING after every line.
-    withFlush(*ptrTimesToRun, *ptrXlines);      // Runs the simulation WITH FLUSHING after every line.
+    withFlush(timesToRun, xLinesInForLoop);      // Runs the simulation WITH FLUSHING after every line.
 
     return 0;
 }
