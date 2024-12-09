@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-#include <memory_resource>
 
 void withoutFlush(int length, int xLines){
 
@@ -71,13 +70,16 @@ void withFlush(int length, int xLines){
 
 int main(){
 
-    int timesToRun = 10000;
-    int xLinesInForLoop = 10000;
+    // Amount of lines in total is (timesToRun * xLinesInForLoop).
+    // It has a time complexity of O(n^2), because for every run it has to go through 2 for-loops.
+    const int timesToRun = 10000;     // Decides how many times to simulate the written lines.
+    const int xLinesInForLoop = 10000;    // Decides how many lines to write per simulation.
 
-    //withoutFlush(timesToRun, xLinesInForLoop);
-    withFlush(timesToRun, xLinesInForLoop);
+    const int* ptrTimesToRun = &timesToRun;   // Pointer which points to the mem address for the var deciding x times to run.
+    const int* ptrXlines = &xLinesInForLoop;  // Pointer which points to the mem address for the var deciding x lines to simulate.
 
-
+    //withoutFlush(timesToRun, xLinesInForLoop);    // Runs the simulation WITHOUT FLUSHING after every line.
+    withFlush(*ptrTimesToRun, *ptrXlines);      // Runs the simulation WITH FLUSHING after every line.
 
     return 0;
 }

@@ -6,7 +6,11 @@ Flushing the buffer after every written line is slower than not flushing after w
 
 ### Methodology:
 Created two methods where one flushes after every written line and one that does not.
-It runs the method 100,000 times with 10,000 lines and calculates the average time used in ms.
+It runs the method 100,000 times with 10,000 lines and calculates the average time used in ms.  
+Both functions run functionally the same with the only difference being the flushing.   
+They both start out by creating a vector to store the amount of time it took to run each iteration of the simulation.  
+Then it runs the simulation 100,000 times and calculates the average time used in ms.
+Then they both write x lines, y amount of times.
 
 ### Values:
 Run 1: w/out flush: 6090ms, with flush: 7032ms  
