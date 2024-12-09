@@ -1,4 +1,7 @@
-# GOAL OF THIS PROJECT
+# Testing flushing the buffer in C++ compared to not flushing.
+# This was done using a MacBook Air M1 (2020)
+
+### Goal of this project:
 The goal of this project was to test if always flushing the buffer after every written line is slower.
 
 ### Hypothesis: 
@@ -28,3 +31,5 @@ Without flushing, it is 12.87% faster
 ### Conclusion:
 
 In conclusion, the hypothesis was correct. Flushing the buffer after every written line is slower than not flushing after writing all lines.
+
+btw the time complexity is O(N^2), so don't do as I did and change the number of times it runs to 1,000,000.
