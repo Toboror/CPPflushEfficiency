@@ -30,7 +30,13 @@ void withoutFlush(int length, int xLines){
         totalTime += time;
     }
 
-    long long averageTime = totalTime / timeTaken.size();
+    /* long long guarantees same amounts of bits on both 32- and 64-bit systems.
+     * const unsigned long long, because it is never supposed to have a negative number.
+     * Calculates the time based on the total amount of time all the simulaitons took and divides
+     * it by the number of simulations ran. Then you get how much time one simulation took, and then
+     * you take the average of all those times and store it in the averageTime var.
+    */
+    const unsigned long long averageTime = totalTime / timeTaken.size();
 
     std::cout << "Average time is: " << averageTime << "ms" << std::endl;
 
@@ -58,20 +64,23 @@ void withFlush(int length, int xLines){
     }
 
     long long totalTime = 0;
-
     for (const auto& time : timeTaken) {
         totalTime += time;
     }
 
-    long long averageTime = totalTime / timeTaken.size();
+    /* long long guarantees same amounts of bits on both 32- and 64-bit systems.
+     * const unsigned long long, because it is never supposed to have a negative number.
+     * Calculates the time based on the total amount of time all the simulaitons took and divides
+     * it by the number of simulations ran. Then you get how much time one simulation took, and then
+     * you take the average of all those times and store it in the averageTime var.
+    */
+    const unsigned long long averageTime = totalTime / timeTaken.size();
 
     std::cout << "Average time is: " << averageTime << "ms" << std::endl;
 }
 
 int main(){
 
-    // Amount of lines in total is (timesToRun * xLinesInForLoop).
-    // It has a time complexity of O(n^2), because for every run it has to go through 2 for-loops.
     const int timesToRun = 10000;     // Decides how many times to simulate the written lines.
     const int xLinesInForLoop = 10000;    // Decides how many lines to write per simulation.
 
